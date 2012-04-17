@@ -54,7 +54,7 @@ In case the given IP does not find a localization, the server will response a 40
     Content-Length: 54
     Content-Type: application/json; charset=utf8
 
-    {"status":404,"message":"No localization found."}
+    {"message":"No localization found."}
 
 Finaly, a last case is provided if you mispealed the IP in the URI, by send us a 400
 
@@ -66,7 +66,7 @@ Finaly, a last case is provided if you mispealed the IP in the URI, by send us a
     Content-Length: 63
     Content-Type: application/json; charset=utf8
 
-    {"status":400,"message":"No IP address found in the URI."}
+    {"message":"No IP address found in the URI."}
 
 License
 -------
