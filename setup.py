@@ -1,16 +1,30 @@
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+import os
+from setuptools import setup
 
-config = {
-    'description': 'Very useless HTTP localization service',
-    'author': 'Bertrand Tornil',
-    'version': '0.1',
-    'install_requires': ['Bottle', 'GeoIP'],
-    'packages': ['py_localize'],
-    'scripts': ['python localize/app.py'],
-    'name': 'py_localize'
-}
+# Utility function to read the README file.
+# Used for the long_description.  It's nice, because now 1) we have a top level
+# README file and 2) it's easier to type in the README file than to put a raw
+# string in below ...
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-setup(**config)
+setup(
+    name = "py_localize",
+    version = "0.2",
+    author = "Bertrand Tornil",
+    author_email = "bertrand.tornil@gmail.com",
+    description = ("Useless HTTP localization service based on Maxmind GeoIP "),
+    license = "MIT",
+    keywords = "Localization Maxmind Bottle Training",
+    url = "",
+    packages = ['localize'],
+    scripts = ['localize/app.py'],
+    test_suite = 'tests',
+    long_description = read('README.md'),
+    classifiers = [
+        "Development Status :: 3 - Alpha",
+        "Topic :: Utilities",
+        "License :: OSI Approved :: MIT License",
+    ],
+)
+

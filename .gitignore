@@ -1,2 +1,4 @@
 data/GeoLiteCity.dat
 *.pyc
+build
+py_localize.egg-info
