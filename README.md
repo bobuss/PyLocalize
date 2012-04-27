@@ -7,12 +7,23 @@ Ultra simple and useless geoip service... this time in python
 Installation
 ------------
 
+- Install [the bottle microframework](http://bottlepy.org/)
+
+        $ sudo pip install bottle
+
+- Install the GeoIP python api
+
+        $ wget http://www.maxmind.com/download/geoip/api/python/GeoIP-Python-1.2.4.tar.gz
+        $ tar xvzf GeoIP-Python-1.2.4.tar.gz && cd GeoIP-Python-1.2.4
+        $ python setup.py build && sudo setup.py install
+
 - Install the MaxMind-s GeoIP database
 
         $ cd data && wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
         $ gunzip GeoLiteCity.dat.gz && cd ..
 
 - Start the server: `python localize/app.py`
+
 
 Try it
 ------
