@@ -4,6 +4,10 @@ Localize.py
 Ultra simple and useless geoip service... this time in python
 
 
+![IP Adresses around the world](https://raw.githubusercontent.com/bobuss/PyLocalize/master/localize/test2.png "Ip Adresses around the world")
+
+
+
 Installation
 ------------
 

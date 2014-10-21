@@ -1,18 +1,18 @@
-from bottle import Bottle, run, route, response, error
+from bottle import Bottle, run, response
 import logging
-import re
 import json
-import GeoIP
+import pygeoip
 
 
 logging.basicConfig(level=logging.DEBUG)
-gi = GeoIP.open("./data/GeoLiteCity.dat",GeoIP.GEOIP_STANDARD)
+gi = pygeoip.GeoIP("./data/GeoLiteCity.dat")
 app = Bottle()
 
 error_statuses = {
     400: 'Bad request: must be a /x.y.z.t form.',
     404: 'No localization found.'
 }
+
 
 def get_message(status):
     return error_statuses[status]
@@ -32,10 +32,6 @@ def geolocalize(ip='127.0.0.1'):
         })
 
     else:
-        # we must decode / encode some text fields
-        result['city'] = result['city'].decode('iso-8859-15')
-        result['region_name'] = result['region_name'].decode('iso-8859-15')
-        logging.debug(result)
         return result
 
 

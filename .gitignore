@@ -1,4 +1,10 @@
+.Python
+.DS_Store
 data/GeoLiteCity.dat
 *.pyc
 build
 py_localize.egg-info
+man
+bin
+lib
+include
